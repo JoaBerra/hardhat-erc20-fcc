@@ -7,7 +7,12 @@ const { verify } = require("../helper-functions")
 
 module.exports = async ({ getNamedAccounts, deployments }) => {
   const { deploy, log } = deployments
+  log(`deploy content: ${deploy}`)
+  log(`log content: ${log}`)
+  log(`deployments content: ${deployments}`)
+
   const { deployer } = await getNamedAccounts()
+  log(`deployer content: ${deployer}`)
   const ourToken = await deploy("OurToken", {
     from: deployer,
     args: [INITIAL_SUPPLY],
